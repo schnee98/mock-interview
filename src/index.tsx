@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Question from "../entities/Question";
+import { RouterProvider } from "react-router-dom";
+import { router } from "shared/router/router";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Question />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

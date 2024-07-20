@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { SYSTEM_INIT_MESSAGES } from "shared/constants";
 import styled from "styled-components";
-import { SYSTEM_INIT_MESSAGES } from "../shared/constants";
 
 interface Message {
   role: string;
@@ -32,7 +32,7 @@ const openaiQuery = async (messages: Message[]) => {
   }
 };
 
-const Question: React.FC = () => {
+const Question: FC = () => {
   const [inputText, setInputText] = useState<string>("");
   const [generatedText, setGeneratedText] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([...SYSTEM_INIT_MESSAGES]);
