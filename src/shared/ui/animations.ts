@@ -1,3 +1,4 @@
+import { BACKGROUND } from "shared/constants";
 import { keyframes } from "styled-components";
 
 export const dropAnimation = keyframes`
@@ -20,13 +21,13 @@ export const fillBackground = keyframes`
     width: 0;
     height: 100vh;
     opacity: 1;
-    background-color: #ffffff;
+    ${BACKGROUND}
   }
   100% {
     width: 100vw;
     height: 100vh;
     opacity: 1;
-    background-color: #e2e2e2;
+    ${BACKGROUND}
   }
 `;
 

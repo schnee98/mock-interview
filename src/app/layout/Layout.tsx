@@ -1,12 +1,10 @@
 import { FC, ReactNode } from "react";
-import { BackgroundFill, MainContainer, MainContent, WaterDrop } from "./LayoutStyles";
+import { MainContainer, MainContent } from "./LayoutStyles";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <MainContainer>
-      <WaterDrop />
       <MainContent>{children}</MainContent>
-      <BackgroundFill />
     </MainContainer>
   );
 };
