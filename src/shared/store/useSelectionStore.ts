@@ -1,6 +1,5 @@
+import { Developer } from "shared/constants";
 import { create } from "zustand";
-
-type Developer = "backend" | "frontend" | "ios";
 
 interface SelectionStoreState {
   developer: Developer;
@@ -19,3 +18,5 @@ const useSelectionStore = create<SelectionStoreState>((set) => ({
   setTheme: (theme: string) => set({ theme }),
   setThemeDetails: (themeDetails: string[]) => set({ themeDetails }),
 }));
+
+export default useSelectionStore;

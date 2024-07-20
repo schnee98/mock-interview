@@ -1,10 +1,10 @@
 import { FC } from "react";
-import HeaderText from "widgets/text/HeaderText";
+import { HeaderText } from "widgets/text/headers";
 
 const ThemeContentSelection: FC = () => {
   return (
     <>
-      <HeaderText content="주제 내용을 정해주세요! 복수 선택 가능 (0/12)" />
+      <HeaderText>주제 내용을 정해주세요! 복수 선택 가능 (0/12)</HeaderText>
       <div>
         <input type="checkbox" id="프로토타입" value="프로토타입" />
         <label htmlFor="프로토타입">프로토타입</label>

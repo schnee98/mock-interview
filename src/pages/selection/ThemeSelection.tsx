@@ -1,10 +1,10 @@
 import { FC } from "react";
-import HeaderText from "widgets/text/HeaderText";
+import { HeaderText } from "widgets/text/headers";
 
 const ThemeSelection: FC = () => {
   return (
     <>
-      <HeaderText content="어떤 주제로 면접을 원하세요?" />
+      <HeaderText>어떤 주제로 면접을 원하세요?</HeaderText>
       <div>
         <input type="checkbox" id="자바스크립트" value="자바스크립트" />
         <label htmlFor="자바스크립트">자바스크립트</label>
