@@ -52,3 +52,6 @@ export const SYSTEM_INIT_MESSAGES = [
     content: THEME_INIT_CONTENT,
   },
 ];
+
+export type Developer = "backend" | "frontend" | "ios";
+

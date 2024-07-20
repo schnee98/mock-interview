@@ -10,17 +10,20 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 const MainContainer = styled.div`
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MainContent = styled.main`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 44rem;
+  gap: 4rem;
+  align-items: center;
+  width: 38rem;
   max-width: 100vw;
   padding: 0 2rem;
 `;
