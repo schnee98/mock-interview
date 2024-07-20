@@ -2,7 +2,7 @@ import { ChangeEvent, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Developer } from "shared/constants";
 import useSelectionStore from "shared/store/useSelectionStore";
-import HeaderText from "widgets/text/HeaderText";
+import { HeaderText } from "widgets/text/headers";
 
 const DeveloperSelection: FC = () => {
   const { setDeveloper } = useSelectionStore();
@@ -17,7 +17,7 @@ const DeveloperSelection: FC = () => {
 
   return (
     <>
-      <HeaderText content="당신은 어떤 개발자인가요?" />
+      <HeaderText>당신은 어떤 개발자인가요?</HeaderText>
       <div>
         <input type="checkbox" id="backend" value="백엔드 개발자" onChange={handleCheckboxChange} />
         <label htmlFor="backend">백엔드 개발자</label>
