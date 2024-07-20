@@ -1,10 +1,10 @@
-import DeveloperSelection from "pages/DeveloperSelection";
-import Feedback from "pages/Feedback";
-import Question from "pages/Question";
-import Result from "pages/Result";
-import StartPage from "pages/StartPage";
-import ThemeContentSelection from "pages/ThemeContentSelection";
-import ThemeSelection from "pages/ThemeSelection";
+import DeveloperSelection from "pages/selection/DeveloperSelection";
+import Feedback from "pages/process/Feedback";
+import Question from "pages/process/Question";
+import Result from "pages/process/Result";
+import StartPage from "pages/home/StartPage";
+import ThemeContentSelection from "pages/selection/ThemeContentSelection";
+import ThemeSelection from "pages/selection/ThemeSelection";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
