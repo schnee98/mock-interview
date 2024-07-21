@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { dropAnimation, fillBackground } from "shared/ui/animations";
 import styled, { keyframes } from "styled-components";
 import { StartButton } from "widgets/submit/buttons";
-import { Logo } from "widgets/text/headers";
+import { Logo, Subtitle } from "widgets/text/headers";
+import BackgroundAnimation from "./BackgroundAnimation";
 
 const StartPage: FC = () => {
   const navigate = useNavigate();
@@ -12,11 +12,10 @@ const StartPage: FC = () => {
 
   return (
     <>
-      <Background />
-      <WaterDrop />
-      <BackgroundFill />
+      <BackgroundAnimation />
       <FadedConent order={0}>
         <Logo>schuterview</Logo>
+        <Subtitle>모 의 개 발 자 인 터 뷰</Subtitle>
       </FadedConent>
       <FadedConent order={1}>
         <StartButton onClick={handleClick}>시작하기</StartButton>
@@ -37,39 +36,13 @@ const fadeAnimation = keyframes`
 `;
 
 const FadedConent = styled.div<{ order: number }>`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
   opacity: 0;
   transform: translateY(-30px);
   animation: ${fadeAnimation} 1s calc(${({ order }) => order * 0.5}s + 3s) forwards;
-`;
-
-const WaterDrop = styled.div`
-  width: 2rem;
-  height: 2rem;
-  background-color: #e2e2e2;
-  border-radius: 50%;
-  position: fixed;
-  animation: ${dropAnimation} 1.5s forwards;
-  z-index: 1;
-`;
-
-const Background = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-`;
-
-export const BackgroundFill = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  animation: ${fillBackground} 1s 1.75s forwards;
 `;
 
 export default StartPage;

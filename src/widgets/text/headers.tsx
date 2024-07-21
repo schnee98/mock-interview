@@ -5,33 +5,37 @@ const HeaderItem = styled.h1`
   font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
   font-size: 4rem;
   margin: 0;
+  text-align: center;
 
   @media (max-width: 650px) {
     font-size: 2rem;
   }
 `;
 
-export const Logo = styled.h1`
+const AnimatedHeaderItem = styled(HeaderItem)`
   animation: ${headerAnimation} 2s infinite linear;
+`;
+
+export const Logo = styled(AnimatedHeaderItem)`
   font-family: "Bungee Shade", cursive;
-  text-align: center;
-  font-size: 4rem;
+`;
+
+export const HeaderText = styled(AnimatedHeaderItem)`
+  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
+`;
+
+const BaseText = styled.div`
+  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
   margin: 0;
 
   @media (max-width: 650px) {
-    font-size: 2rem;
+    font-size: 0.75rem;
   }
 `;
 
-export const HeaderText = styled.h1`
-  animation: ${headerAnimation} 2s infinite linear;
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
-  text-align: center;
-  font-size: 4rem;
-
-  @media (max-width: 650px) {
-    font-size: 2rem;
-  }
+export const Subtitle = styled(BaseText)`
+  padding: 0.5rem 0.75rem;
+  background-color: #e2e2e2;
+  border: 1px solid #b1b1b1;
+  border-radius: 8px;
 `;
-
-export const Subtitle = styled.div``;
