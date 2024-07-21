@@ -10,6 +10,11 @@ export const CheckboxWrapper = styled.label`
   border-radius: 0.5rem;
   cursor: pointer;
   position: relative;
+
+  @media (max-width: 650px) {
+    width: 3.5rem;
+    min-height: 3.5rem;
+  }
 `;
 
 export const CheckboxTitle = styled.span`
@@ -27,6 +32,11 @@ export const CheckboxTitle = styled.span`
   transition: 0.15s ease;
   cursor: pointer;
   position: relative;
+
+  @media (max-width: 650px) {
+    width: 5rem;
+    min-height: 5rem;
+  }
 `;
 
 export const CheckboxIcon = styled.span`
@@ -37,8 +47,19 @@ export const CheckboxIcon = styled.span`
     width: 3rem;
     height: 3rem;
   }
+
+  @media (max-width: 650px) {
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 `;
 
 export const CheckboxLabel = styled.span`
   color: #707070;
+
+  @media (max-width: 650px) {
+    font-size: 0.75rem;
+  }
 `;

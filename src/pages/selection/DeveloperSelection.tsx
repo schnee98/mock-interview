@@ -29,7 +29,7 @@ const DeveloperSelection: FC = () => {
 
 const Selection = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 export default DeveloperSelection;
