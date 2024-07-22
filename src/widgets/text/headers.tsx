@@ -18,6 +18,11 @@ const AnimatedHeaderItem = styled(HeaderItem)`
 
 export const Logo = styled(AnimatedHeaderItem)`
   font-family: "Bungee Shade", cursive;
+  font-size: 4rem;
+
+  @media (max-width: 650px) {
+    font-size: 2rem;
+  }
 `;
 
 export const HeaderText = styled(AnimatedHeaderItem)`
