@@ -17,7 +17,7 @@ export const CheckIconWrapper = styled.label`
   }
 `;
 
-export const CheckIconTitle = styled.span<{ isClicked: boolean }>`
+export const CheckIconTitle = styled.span<{ $isClicked: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ export const CheckIconTitle = styled.span<{ isClicked: boolean }>`
   min-height: 7rem;
   border-radius: 0.5rem;
   border: 2px solid #818181;
-  background-color: ${({ isClicked }) => (isClicked ? "#e7e7e7" : "#fff")};
+  background-color: ${({ $isClicked }) => ($isClicked ? "#e7e7e7" : "#fff")};
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: 0.15s ease;
   cursor: pointer;

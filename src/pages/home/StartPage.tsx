@@ -17,11 +17,11 @@ const StartPage: FC = () => {
   return (
     <>
       <BackgroundAnimation />
-      <FadeContent order={0} isFadingOut={isFadingOut} delay={3}>
+      <FadeContent order={0} $isFadingOut={isFadingOut} $delay={3}>
         <Logo>schuterview</Logo>
         <Subtitle>모 의 개 발 자 인 터 뷰</Subtitle>
       </FadeContent>
-      <FadeContent order={1} isFadingOut={isFadingOut} delay={3}>
+      <FadeContent order={1} $isFadingOut={isFadingOut} $delay={3}>
         <SubmitButton onClick={handleClick}>시작하기</SubmitButton>
       </FadeContent>
     </>

@@ -49,21 +49,21 @@ const ThemeContentSelection: FC = () => {
 
   return (
     <>
-      <FadeContent order={0} isFadingOut={isFadingOut}>
+      <FadeContent order={0} $isFadingOut={isFadingOut}>
         <HeaderText>주제 내용을 정해주세요!</HeaderText>
         <HeaderText>{headerText}</HeaderText>
       </FadeContent>
-      <FadeContent order={1} isFadingOut={isFadingOut}>
+      <FadeContent order={1} $isFadingOut={isFadingOut}>
         <SelectContainer>
           <ScrollArea>
-            <SelectBox onClick={handleClickAll} isClicked={selectedBox.includes(SELECT_ALL)}>
+            <SelectBox onClick={handleClickAll} $isClicked={selectedBox.includes(SELECT_ALL)}>
               {SELECT_ALL}
             </SelectBox>
             {themeContents.map((content) => (
               <SelectBox
                 key={content}
                 onClick={() => handleSelectBoxClick(content)}
-                isClicked={selectedBox.some((name) => name === content)}
+                $isClicked={selectedBox.some((name) => name === content)}
               >
                 {content}
               </SelectBox>

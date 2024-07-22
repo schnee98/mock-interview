@@ -18,9 +18,9 @@ const CheckIcon: FC<CheckboxProps> = ({ label, img, onClick }) => {
   return (
     <div onClick={handleClick}>
       <CheckIconWrapper>
-        <CheckIconTitle isClicked={isClicked}>
+        <CheckIconTitle $isClicked={isClicked}>
           <CheckIconImage>
-            <img src={img} />
+            <img src={img} alt={img} />
           </CheckIconImage>
           <CheckIconLabel>{label}</CheckIconLabel>
         </CheckIconTitle>

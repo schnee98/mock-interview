@@ -47,20 +47,20 @@ const ThemeSelection: FC = () => {
 
   return (
     <>
-      <FadeContent order={0} isFadingOut={isFadingOut}>
+      <FadeContent order={0} $isFadingOut={isFadingOut}>
         <HeaderText>어떤 주제로 면접을 원하세요?</HeaderText>
       </FadeContent>
-      <FadeContent order={1} isFadingOut={isFadingOut}>
+      <FadeContent order={1} $isFadingOut={isFadingOut}>
         <SelectContainer>
           <ScrollArea>
-            <SelectBox onClick={handleClickAll} isClicked={selectedBox.includes(SELECT_ALL)}>
+            <SelectBox onClick={handleClickAll} $isClicked={selectedBox.includes(SELECT_ALL)}>
               {SELECT_ALL}
             </SelectBox>
             {themes.map((theme) => (
               <SelectBox
                 key={theme}
                 onClick={() => handleSelectBoxClick(theme)}
-                isClicked={selectedBox.some((name) => name === theme)}
+                $isClicked={selectedBox.some((name) => name === theme)}
               >
                 {theme}
               </SelectBox>

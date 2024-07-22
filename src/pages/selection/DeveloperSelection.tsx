@@ -20,10 +20,10 @@ const DeveloperSelection: FC = () => {
 
   return (
     <>
-      <FadeContent order={0} isFadingOut={isFadingOut}>
+      <FadeContent order={0} $isFadingOut={isFadingOut}>
         <HeaderText>당신은 어떤 개발자인가요?</HeaderText>
       </FadeContent>
-      <FadeContent order={1} isFadingOut={isFadingOut}>
+      <FadeContent order={1} $isFadingOut={isFadingOut}>
         <Selection>
           <CheckIcon label="백엔드" img="/img/java.svg" onClick={() => handleCheckboxChange("backend")} />
           <CheckIcon label="프론트엔드" img="/img/javascript.svg" onClick={() => handleCheckboxChange("frontend")} />
