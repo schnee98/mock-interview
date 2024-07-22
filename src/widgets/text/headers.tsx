@@ -21,11 +21,11 @@ export const Logo = styled(AnimatedHeaderItem)`
 `;
 
 export const HeaderText = styled(AnimatedHeaderItem)`
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
+  font-family: "TheJamsil5Bold", cursive;
 `;
 
 const BaseText = styled.div`
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
+  font-family: "TheJamsil5Bold", cursive;
   margin: 0;
 
   @media (max-width: 650px) {
