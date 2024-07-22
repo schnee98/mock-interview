@@ -2,7 +2,7 @@ import { headerAnimation } from "shared/ui/animations";
 import styled from "styled-components";
 
 const HeaderItem = styled.h1`
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
+  font-family: "TheJamsil5Bold", cursive;
   font-size: 3rem;
   margin: 0;
   text-align: center;
