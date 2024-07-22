@@ -52,3 +52,7 @@ export const SYSTEM_INIT_MESSAGES = [
     content: THEME_INIT_CONTENT,
   },
 ];
+
+export type Developer = "backend" | "frontend" | "ios";
+
+export const BACKGROUND = "background: linear-gradient(0deg, #9e9e9e,#e7e7e7);";
