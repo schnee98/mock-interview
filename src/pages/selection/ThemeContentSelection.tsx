@@ -43,14 +43,15 @@ const ThemeContentSelection: FC = () => {
     setSelectedBox([]);
   };
 
+  const headerText = `복수 선택 가능 ${
+    selectedBox.length > themeContents.length ? themeContents.length : selectedBox.length
+  }/${themeContents.length}`;
+
   return (
     <>
       <FadeContent order={0} isFadingOut={isFadingOut}>
         <HeaderText>주제 내용을 정해주세요!</HeaderText>
-        <HeaderText>
-          복수 선택 가능 {selectedBox.length > themeContents.length ? themeContents.length : selectedBox.length}/
-          {themeContents.length}
-        </HeaderText>
+        <HeaderText>{headerText}</HeaderText>
       </FadeContent>
       <FadeContent order={1} isFadingOut={isFadingOut}>
         <SelectContainer>
