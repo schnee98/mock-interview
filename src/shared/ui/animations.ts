@@ -34,48 +34,48 @@ export const fillBackground = keyframes`
 
 export const headerAnimation = keyframes`
 0% {
-    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #fff, -7px 7px #fff,
-      -8px 8px #fff, -9px 9px #fff, -10px 10px #fff;
+    text-shadow: -1px 1px #eee, -2px 2px #eee, -3px 3px #eee, -4px 4px #eee, -5px 5px #eee, -6px 6px #ddd, -7px 7px #ddd,
+      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
   }
   10% {
-    text-shadow: -1px 1px #fff, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #fff,
-      -8px 8px #fff, -9px 9px #fff, -10px 10px #fff;
+    text-shadow: -1px 1px #ddd, -2px 2px #eee, -3px 3px #eee, -4px 4px #eee, -5px 5px #eee, -6px 6px #eee, -7px 7px #ddd,
+      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
   }
   20% {
-    text-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
-      -8px 8px #fff, -9px 9px #fff, -10px 10px #fff;
+    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #eee, -4px 4px #eee, -5px 5px #eee, -6px 6px #eee, -7px 7px #eee,
+      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
   }
   30% {
-    text-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
-      -8px 8px #ddd, -9px 9px #fff, -10px 10px #fff;
+    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #eee, -5px 5px #eee, -6px 6px #eee, -7px 7px #eee,
+      -8px 8px #eee, -9px 9px #ddd, -10px 10px #ddd;
   }
   40% {
-    text-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
-      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #fff;
+    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #eee, -6px 6px #eee, -7px 7px #eee,
+      -8px 8px #eee, -9px 9px #eee, -10px 10px #ddd;
   }
   50% {
-    text-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #ddd, -7px 7px #ddd,
-      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
+    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #eee, -7px 7px #eee,
+      -8px 8px #eee, -9px 9px #eee, -10px 10px #eee;
   }
   60% {
-    text-shadow: -1px 1px #ddd, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #ddd,
-      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
+    text-shadow: -1px 1px #eee, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #eee,
+      -8px 8px #eee, -9px 9px #eee, -10px 10px #eee;
   }
   70% {
-    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff,
-      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
+    text-shadow: -1px 1px #eee, -2px 2px #eee, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
+      -8px 8px #eee, -9px 9px #eee, -10px 10px #eee;
   }
   80% {
-    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff,
-      -8px 8px #fff, -9px 9px #ddd, -10px 10px #ddd;
+    text-shadow: -1px 1px #eee, -2px 2px #eee, -3px 3px #eee, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
+      -8px 8px #ddd, -9px 9px #eee, -10px 10px #eee;
   }
   90% {
-    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff,
-      -8px 8px #fff, -9px 9px #fff, -10px 10px #ddd;
+    text-shadow: -1px 1px #eee, -2px 2px #eee, -3px 3px #eee, -4px 4px #eee, -5px 5px #ddd, -6px 6px #ddd, -7px 7px #ddd,
+      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #eee;
   }
   100% {
-    text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #fff, -7px 7px #fff,
-      -8px 8px #fff, -9px 9px #fff, -10px 10px #fff;
+    text-shadow: -1px 1px #eee, -2px 2px #eee, -3px 3px #eee, -4px 4px #eee, -5px 5px #eee, -6px 6px #ddd, -7px 7px #ddd,
+      -8px 8px #ddd, -9px 9px #ddd, -10px 10px #ddd;
   }
 `;
 
