@@ -11,11 +11,11 @@ export const SelectContainer = styled.div`
   }
 `;
 
-export const SelectBox = styled.div`
+export const SelectBox = styled.div<{ isClicked: boolean }>`
   box-sizing: border-box;
   width: 20rem;
   height: 3rem;
-  background-color: #ffffff;
+  background-color: ${({ isClicked }) => (isClicked ? "#e7e7e7" : "#fff")};
   display: flex;
   align-items: center;
   padding: 0 1rem;

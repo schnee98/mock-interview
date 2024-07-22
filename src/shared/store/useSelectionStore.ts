@@ -3,20 +3,20 @@ import { create } from "zustand";
 
 interface SelectionStoreState {
   developer: Developer;
-  theme: string;
-  themeDetails: string[];
+  theme: string[];
+  themeContents: string[];
   setDeveloper: (developer: Developer) => void;
-  setTheme: (theme: string) => void;
-  setThemeDetails: (themeDetails: string[]) => void;
+  setTheme: (theme: string[]) => void;
+  setThemeContents: (themeContents: string[]) => void;
 }
 
 const useSelectionStore = create<SelectionStoreState>((set) => ({
   developer: "frontend",
-  theme: "",
-  themeDetails: [],
+  theme: [],
+  themeContents: [],
   setDeveloper: (developer: Developer) => set({ developer }),
-  setTheme: (theme: string) => set({ theme }),
-  setThemeDetails: (themeDetails: string[]) => set({ themeDetails }),
+  setTheme: (theme: string[]) => set({ theme }),
+  setThemeContents: (themeContents: string[]) => set({ themeContents }),
 }));
 
 export default useSelectionStore;
