@@ -1,5 +1,6 @@
+import { delay } from "q";
 import { BACKGROUND } from "shared/constants";
-import { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const dropAnimation = keyframes`
   0% {
@@ -76,4 +77,42 @@ export const headerAnimation = keyframes`
     text-shadow: -1px 1px #ddd, -2px 2px #ddd, -3px 3px #ddd, -4px 4px #ddd, -5px 5px #ddd, -6px 6px #fff, -7px 7px #fff,
       -8px 8px #fff, -9px 9px #fff, -10px 10px #fff;
   }
+`;
+
+export const fadeInAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const fadeOutAnimation = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+`;
+
+export const FadeContent = styled.div<{ order: number; isFadingOut: boolean; delay?: number }>`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  opacity: ${({ isFadingOut }) => (isFadingOut ? css`1` : css`0`)};
+  animation: ${({ isFadingOut, order, delay }) =>
+    isFadingOut
+      ? css`
+          ${fadeOutAnimation} 1s calc(${order * 0.5}s) forwards
+        `
+      : css`
+          ${fadeInAnimation} 1s calc(${order * 0.5}s + ${delay || 0}s) forwards
+        `};
 `;
