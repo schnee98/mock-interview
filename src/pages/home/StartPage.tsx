@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { StartButton } from "widgets/submit/buttons";
+import { SubmitButton } from "widgets/submit/buttons";
 import { Logo, Subtitle } from "widgets/text/headers";
 import BackgroundAnimation from "./BackgroundAnimation";
 import { FadeContent } from "shared/ui/animations";
@@ -22,7 +22,7 @@ const StartPage: FC = () => {
         <Subtitle>모 의 개 발 자 인 터 뷰</Subtitle>
       </FadeContent>
       <FadeContent order={1} isFadingOut={isFadingOut} delay={3}>
-        <StartButton onClick={handleClick}>시작하기</StartButton>
+        <SubmitButton onClick={handleClick}>시작하기</SubmitButton>
       </FadeContent>
     </>
   );

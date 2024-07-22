@@ -4,7 +4,7 @@ import { Developer } from "shared/constants";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
 import styled from "styled-components";
-import Checkbox from "widgets/checkbox/Checkbox";
+import CheckIcon from "widgets/icon/CheckIcon";
 import { HeaderText } from "widgets/text/headers";
 
 const DeveloperSelection: FC = () => {
@@ -25,9 +25,9 @@ const DeveloperSelection: FC = () => {
       </FadeContent>
       <FadeContent order={1} isFadingOut={isFadingOut}>
         <Selection>
-          <Checkbox label="백엔드" img="/img/java.svg" onClick={() => handleCheckboxChange("backend")} />
-          <Checkbox label="프론트엔드" img="/img/javascript.svg" onClick={() => handleCheckboxChange("frontend")} />
-          <Checkbox label="IOS" img="/img/swift.svg" onClick={() => handleCheckboxChange("ios")} />
+          <CheckIcon label="백엔드" img="/img/java.svg" onClick={() => handleCheckboxChange("backend")} />
+          <CheckIcon label="프론트엔드" img="/img/javascript.svg" onClick={() => handleCheckboxChange("frontend")} />
+          <CheckIcon label="IOS" img="/img/swift.svg" onClick={() => handleCheckboxChange("ios")} />
         </Selection>
       </FadeContent>
     </>

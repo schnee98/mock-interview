@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CheckboxWrapper = styled.label`
+export const CheckIconWrapper = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@ export const CheckboxWrapper = styled.label`
   }
 `;
 
-export const CheckboxTitle = styled.span`
+export const CheckIconTitle = styled.span<{ isClicked: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ export const CheckboxTitle = styled.span`
   min-height: 7rem;
   border-radius: 0.5rem;
   border: 2px solid #818181;
-  background-color: #fff;
+  background-color: ${({ isClicked }) => (isClicked ? "#e7e7e7" : "#fff")};
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: 0.15s ease;
   cursor: pointer;
@@ -39,7 +39,7 @@ export const CheckboxTitle = styled.span`
   }
 `;
 
-export const CheckboxIcon = styled.span`
+export const CheckIconImage = styled.span`
   transition: 0.375s ease;
   color: #494949;
 
@@ -56,7 +56,7 @@ export const CheckboxIcon = styled.span`
   }
 `;
 
-export const CheckboxLabel = styled.span`
+export const CheckIconLabel = styled.span`
   color: #707070;
 
   @media (max-width: 650px) {
