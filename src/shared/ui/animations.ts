@@ -1,4 +1,3 @@
-import { delay } from "q";
 import { BACKGROUND } from "shared/constants";
 import styled, { css, keyframes } from "styled-components";
 

@@ -12,7 +12,8 @@ const ThemeContentSelection: FC = () => {
   return (
     <>
       <FadeContent order={0} isFadingOut={isFadingOut}>
-        <HeaderText>주제 내용을 정해주세요! 복수 선택 가능 (0/12)</HeaderText>
+        <HeaderText>주제 내용을 정해주세요!</HeaderText>
+        <HeaderText>복수 선택 가능 (0/12)</HeaderText>
       </FadeContent>
       <FadeContent order={1} isFadingOut={isFadingOut}>
         <SelectContainer>
