@@ -17,7 +17,7 @@ export const MainContent = styled.main`
   flex-direction: column;
   gap: 4rem;
   align-items: center;
-  width: 38rem;
+  width: 41rem;
   max-width: 100vw;
   padding: 0 2rem;
   position: relative;

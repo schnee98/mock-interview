@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const StartButton = styled.button`
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
+export const SubmitButton = styled.button`
+  font-family: "TheJamsil5Bold", cursive;
   font-size: 1rem;
   font-weight: 700;
   width: fit-content;

@@ -1,38 +1,76 @@
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
+import { SELECT_ALL, THEME_CONTENTS } from "shared/constants";
+import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
 import { ScrollArea, SelectBox, SelectContainer } from "widgets/selection/selection";
-import { StartButton } from "widgets/submit/buttons";
+import { SubmitButton } from "widgets/submit/buttons";
 import { HeaderText } from "widgets/text/headers";
 
 const ThemeContentSelection: FC = () => {
+  const { theme, setThemeContents } = useSelectionStore();
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [selectedBox, setSelectedBox] = useState<string[]>([]);
+  const themeContents = useMemo(() => theme.flatMap((name) => THEME_CONTENTS[name]).filter((name) => name), [theme]);
 
-  const handleSubmitClick = () => {};
+  const handleSubmitClick = () => {
+    setThemeContents(selectedBox.filter((name) => name !== SELECT_ALL));
+    setIsFadingOut(true);
+    // setTimeout(() => navigate("/selection/theme/contents"), 1500);
+  };
+
+  const handleSelectBoxClick = (label: string) => {
+    if (selectedBox.some((name) => name === label)) {
+      setSelectedBox(selectedBox.filter((name) => name !== label).filter((name) => name !== SELECT_ALL));
+      return;
+    }
+
+    const newSelectedBox = [...selectedBox, label];
+
+    if (newSelectedBox.length === themeContents.length) {
+      handleClickAll();
+      return;
+    }
+
+    setSelectedBox([...selectedBox, label]);
+  };
+
+  const handleClickAll = () => {
+    if (selectedBox.length < themeContents.length) {
+      setSelectedBox([...themeContents, SELECT_ALL]);
+      return;
+    }
+
+    setSelectedBox([]);
+  };
+
+  const headerText = `복수 선택 가능 ${
+    selectedBox.length > themeContents.length ? themeContents.length : selectedBox.length
+  }/${themeContents.length}`;
 
   return (
     <>
-      <FadeContent order={0} isFadingOut={isFadingOut}>
-        <HeaderText>주제 내용을 정해주세요! 복수 선택 가능 (0/12)</HeaderText>
+      <FadeContent order={0} $isFadingOut={isFadingOut}>
+        <HeaderText>주제 내용을 정해주세요!</HeaderText>
+        <HeaderText>{headerText}</HeaderText>
       </FadeContent>
-      <FadeContent order={1} isFadingOut={isFadingOut}>
+      <FadeContent order={1} $isFadingOut={isFadingOut}>
         <SelectContainer>
           <ScrollArea>
-            <SelectBox>전체 선택</SelectBox>
-            <SelectBox>스코프</SelectBox>
-            <SelectBox>프로토타입</SelectBox>
-            <SelectBox>this 바인딩</SelectBox>
-            <SelectBox>클로저</SelectBox>
-            <SelectBox>Array.Prototype 메서드</SelectBox>
-            <SelectBox>Number.Prototype 메서드</SelectBox>
-            <SelectBox>String.Prototype 메서드</SelectBox>
-            <SelectBox>브라우저의 렌더링 과정</SelectBox>
-            <SelectBox>이벤트 전파 / 위임</SelectBox>
-            <SelectBox>이벤트 루프, 태스크 큐</SelectBox>
-            <SelectBox>비동기 처리</SelectBox>
-            <SelectBox>Promise, async/await</SelectBox>
+            <SelectBox onClick={handleClickAll} $isClicked={selectedBox.includes(SELECT_ALL)}>
+              {SELECT_ALL}
+            </SelectBox>
+            {themeContents.map((content) => (
+              <SelectBox
+                key={content}
+                onClick={() => handleSelectBoxClick(content)}
+                $isClicked={selectedBox.some((name) => name === content)}
+              >
+                {content}
+              </SelectBox>
+            ))}
           </ScrollArea>
         </SelectContainer>
-        <StartButton onClick={handleSubmitClick}>확인</StartButton>
+        <SubmitButton onClick={handleSubmitClick}>확인</SubmitButton>
       </FadeContent>
     </>
   );
