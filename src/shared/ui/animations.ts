@@ -1,4 +1,3 @@
-import { delay } from "q";
 import { BACKGROUND } from "shared/constants";
 import styled, { css, keyframes } from "styled-components";
 
@@ -101,18 +100,18 @@ export const fadeOutAnimation = keyframes`
   }
 `;
 
-export const FadeContent = styled.div<{ order: number; isFadingOut: boolean; delay?: number }>`
+export const FadeContent = styled.div<{ order: number; $isFadingOut: boolean; $delay?: number }>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  opacity: ${({ isFadingOut }) => (isFadingOut ? css`1` : css`0`)};
-  animation: ${({ isFadingOut, order, delay }) =>
-    isFadingOut
+  opacity: ${({ $isFadingOut }) => ($isFadingOut ? css`1` : css`0`)};
+  animation: ${({ $isFadingOut, order, $delay }) =>
+    $isFadingOut
       ? css`
           ${fadeOutAnimation} 1s calc(${order * 0.5}s) forwards
         `
       : css`
-          ${fadeInAnimation} 1s calc(${order * 0.5}s + ${delay || 0}s) forwards
+          ${fadeInAnimation} 1s calc(${order * 0.5}s + ${$delay || 0}s) forwards
         `};
 `;

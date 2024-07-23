@@ -2,13 +2,13 @@ import { headerAnimation } from "shared/ui/animations";
 import styled from "styled-components";
 
 const HeaderItem = styled.h1`
-  font-family: "Cafe24Moyamoya-Regular-v1.0", cursive;
-  font-size: 4rem;
+  font-family: "TheJamsil5Bold", cursive;
+  font-size: 3rem;
   margin: 0;
   text-align: center;
 
   @media (max-width: 650px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -18,6 +18,11 @@ const AnimatedHeaderItem = styled(HeaderItem)`
 
 export const Logo = styled(AnimatedHeaderItem)`
   font-family: "Bungee Shade", cursive;
+  font-size: 4rem;
+
+  @media (max-width: 650px) {
+    font-size: 2rem;
+  }
 `;
 
 export const HeaderText = styled(AnimatedHeaderItem)`
