@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SELECT_ALL, THEMES } from "shared/constants";
 import useSelectionStore from "shared/store/useSelectionStore";
@@ -12,7 +12,7 @@ const ThemeSelection: FC = () => {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [selectedBox, setSelectedBox] = useState<string[]>([]);
   const navigate = useNavigate();
-  const themes = THEMES[developer];
+  const themes = useMemo(() => THEMES[developer], [developer]);
 
   const handleSubmitClick = () => {
     setTheme(selectedBox);

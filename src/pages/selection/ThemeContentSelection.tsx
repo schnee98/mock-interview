@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { SELECT_ALL, THEME_CONTENTS } from "shared/constants";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
@@ -10,7 +10,7 @@ const ThemeContentSelection: FC = () => {
   const { theme, setThemeContents } = useSelectionStore();
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [selectedBox, setSelectedBox] = useState<string[]>([]);
-  const themeContents = theme.flatMap((name) => THEME_CONTENTS[name]).filter((name) => name);
+  const themeContents = useMemo(() => theme.flatMap((name) => THEME_CONTENTS[name]).filter((name) => name), [theme]);
 
   const handleSubmitClick = () => {
     setThemeContents(selectedBox.filter((name) => name !== SELECT_ALL));
