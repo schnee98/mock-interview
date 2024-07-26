@@ -1,4 +1,5 @@
 import { FC, useMemo, useState } from "react";
+import { useNavigate } from "react-router";
 import { SELECT_ALL, THEME_CONTENTS } from "shared/constants";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
@@ -11,11 +12,12 @@ const ThemeContentSelection: FC = () => {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [selectedBox, setSelectedBox] = useState<string[]>([]);
   const themeContents = useMemo(() => theme.flatMap((name) => THEME_CONTENTS[name]).filter((name) => name), [theme]);
+  const navigate = useNavigate();
 
   const handleSubmitClick = () => {
     setThemeContents(selectedBox.filter((name) => name !== SELECT_ALL));
     setIsFadingOut(true);
-    // setTimeout(() => navigate("/selection/theme/contents"), 1500);
+    setTimeout(() => navigate("/question"), 1500);
   };
 
   const handleSelectBoxClick = (label: string) => {
@@ -70,7 +72,7 @@ const ThemeContentSelection: FC = () => {
             ))}
           </ScrollArea>
         </SelectContainer>
-        <SubmitButton onClick={handleSubmitClick}>확인</SubmitButton>
+        <SubmitButton onClick={handleSubmitClick}>면접 시작하기</SubmitButton>
       </FadeContent>
     </>
   );
