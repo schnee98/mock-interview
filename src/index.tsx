@@ -7,10 +7,10 @@ import GlobalStyle from "shared/ui/GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <React.StrictMode>
+  <>
     <GlobalStyle />
     <Layout>
       <RouterProvider router={router} />
     </Layout>
-  </React.StrictMode>
+  </>
 );
