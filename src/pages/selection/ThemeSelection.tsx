@@ -15,6 +15,8 @@ const ThemeSelection: FC = () => {
   const themes = useMemo(() => THEMES[developer], [developer]);
 
   const handleSubmitClick = () => {
+    if (!selectedBox.length) return;
+
     setTheme(selectedBox);
     setIsFadingOut(true);
     setTimeout(() => navigate("/selection/theme/contents"), 1500);
