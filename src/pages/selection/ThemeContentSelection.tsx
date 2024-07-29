@@ -15,6 +15,8 @@ const ThemeContentSelection: FC = () => {
   const navigate = useNavigate();
 
   const handleSubmitClick = () => {
+    if (!selectedBox.length) return;
+
     setThemeContents(selectedBox.filter((name) => name !== SELECT_ALL));
     setIsFadingOut(true);
     setTimeout(() => navigate("/question"), 1500);
