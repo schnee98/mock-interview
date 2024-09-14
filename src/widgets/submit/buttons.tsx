@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SubmitButton = styled.button`
-  font-family: "TheJamsil5Bold", cursive;
+  font-family: "Pretendard", cursive;
   font-size: 1rem;
   font-weight: 700;
   width: fit-content;

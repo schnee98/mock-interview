@@ -22,4 +22,11 @@ export const MainContent = styled.main`
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  
+  @media (max-width: 650px) {
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0;
+  }
 `;

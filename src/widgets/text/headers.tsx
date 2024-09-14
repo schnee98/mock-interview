@@ -2,7 +2,7 @@ import { headerAnimation } from "shared/ui/animations";
 import styled from "styled-components";
 
 const HeaderItem = styled.h1`
-  font-family: "TheJamsil5Bold", cursive;
+  font-family: "Pretendard", cursive;
   font-size: 3rem;
   margin: 0;
   text-align: center;
@@ -26,11 +26,11 @@ export const Logo = styled(AnimatedHeaderItem)`
 `;
 
 export const HeaderText = styled(AnimatedHeaderItem)`
-  font-family: "TheJamsil5Bold", cursive;
+  font-family: "Pretendard", cursive;
 `;
 
 const BaseText = styled.div`
-  font-family: "TheJamsil5Bold", cursive;
+  font-family: "Pretendard", cursive;
   margin: 0;
 
   @media (max-width: 650px) {
