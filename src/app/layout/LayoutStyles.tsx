@@ -12,11 +12,9 @@ export const MainContainer = styled.div`
 `;
 
 export const MainContent = styled.main`
-  height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 4rem;
   align-items: center;
   width: 41rem;
@@ -24,4 +22,11 @@ export const MainContent = styled.main`
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  
+  @media (max-width: 650px) {
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0;
+  }
 `;
