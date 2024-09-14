@@ -19,7 +19,9 @@ const ThemeSelection: FC = () => {
   const themes = useMemo(() => THEMES[developer], [developer]);
 
   const handleSubmitClick = () => {
-    if (!selectedBox.length) return;
+    if (!selectedBox.length) {
+      return;
+    }
 
     setTheme(selectedBox);
     setIsFadingOut(true);

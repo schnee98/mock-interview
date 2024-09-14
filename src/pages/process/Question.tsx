@@ -1,28 +1,35 @@
-import { FC, useEffect, useState } from "react";
-import { Message } from "shared/constants";
-import { initializeMessages } from "shared/helper/message";
-import { loadSelection } from "shared/helper/sessionStorage";
-import { sendQuestion } from "shared/query/query";
-import useSelectionStore from "shared/store/useSelectionStore";
-import { AnswerIcon, LoadingSpinner } from "shared/ui/icons";
-import styled from "styled-components";
+import { FC, KeyboardEvent, useEffect, useState } from 'react';
+import { Message } from 'shared/constants';
+import { initializeMessages } from 'shared/helper/message';
+import { loadSelection } from 'shared/helper/sessionStorage';
+import { sendQuestion } from 'shared/query/query';
+import { AnswerIcon, LoadingSpinner } from 'shared/ui/icons';
+import styled from 'styled-components';
 
 const Question: FC = () => {
-  const [inputText, setInputText] = useState<string>("");
-  const [generatedText, setGeneratedText] = useState<string>("");
-  const [messages, setMessages] = useState<Message[]>([...initializeMessages(loadSelection())]);
+  const [inputText, setInputText] = useState<string>('');
+  const [generatedText, setGeneratedText] = useState<string>('');
+  const [messages, setMessages] = useState<Message[]>([
+    ...initializeMessages(loadSelection()),
+  ]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleGenerate = async () => {
     setIsLoading(true);
-    const previousMessage = [...messages, { role: "user", content: inputText }];
+    const previousMessage = [...messages, { role: 'user', content: inputText }];
     const { message: newMessage } = await sendQuestion(previousMessage);
     const responseText = newMessage.content;
 
     setMessages([...previousMessage, newMessage]);
-    setGeneratedText(responseText || "");
-    setInputText("");
+    setGeneratedText(responseText || '');
+    setInputText('');
     setIsLoading(false);
+  };
+
+  const handleEnter = (event: KeyboardEvent) => {
+    if (event.shiftKey === false && event.key === 'Enter') {
+      handleGenerate();
+    }
   };
 
   useEffect(() => {
@@ -36,11 +43,20 @@ const Question: FC = () => {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <p dangerouslySetInnerHTML={{ __html: generatedText.replaceAll("\n", "<br>") }}></p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: generatedText.replaceAll('\n', '<br>'),
+            }}
+          ></p>
         )}
       </Feedback>
       <InputContainer>
-        <InputArea value={inputText} onChange={(e) => setInputText(e.target.value)} placeholder="답변을 적어주세요." />
+        <InputArea
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          onKeyDown={handleEnter}
+          placeholder="답변을 적어주세요."
+        />
         <AnswerButton onClick={handleGenerate}>
           <AnswerIcon />
         </AnswerButton>
@@ -50,6 +66,7 @@ const Question: FC = () => {
 };
 
 const Feedback = styled.div`
+  width: 100%;
   height: 300px;
   padding: 10px;
   overflow-y: scroll;
@@ -68,15 +85,6 @@ const Feedback = styled.div`
     display: none;
   }
 `;
-
-// const LoadingSpinner = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   font-size: 1.5rem;
-//   color: #888;
-// `;
 
 const InputContainer = styled.div`
   display: flex;

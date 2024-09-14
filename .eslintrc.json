@@ -24,8 +24,7 @@
   },
   "overrides": [
     {
-      "files": ["*.js", "*.cjs", "*.mjs"],
-      "extends": ["plugin:@typescript-eslint/disable-type-checked"]
+      "files": ["*.js", "*.cjs", "*.mjs"]
     },
     {
       "files": ["*.cjs"],
