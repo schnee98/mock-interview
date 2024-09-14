@@ -12,9 +12,11 @@ export const MainContainer = styled.div`
 `;
 
 export const MainContent = styled.main`
+  height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 4rem;
   align-items: center;
   width: 41rem;

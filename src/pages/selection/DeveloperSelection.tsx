@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Developer } from "shared/constants";
+import { saveInStorage } from "shared/helper/sessionStorage";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
 import styled from "styled-components";
@@ -15,7 +16,9 @@ const DeveloperSelection: FC = () => {
   const handleCheckboxChange = (value: Developer) => {
     setDeveloper(value);
     setIsFadingOut(true);
-    setTimeout(() => navigate("/selection/theme"), 1500);
+    setTimeout(() => {
+      saveInStorage("developer", value);
+      navigate("/selection/theme")}, 1500);
   };
 
   return (

@@ -1,16 +1,16 @@
 import { FC, useEffect, useState } from "react";
 import { Message } from "shared/constants";
 import { initializeMessages } from "shared/helper/message";
+import { loadSelection } from "shared/helper/sessionStorage";
 import { sendQuestion } from "shared/query/query";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { AnswerIcon, LoadingSpinner } from "shared/ui/icons";
 import styled from "styled-components";
 
 const Question: FC = () => {
-  const { developer, themeContents } = useSelectionStore();
   const [inputText, setInputText] = useState<string>("");
   const [generatedText, setGeneratedText] = useState<string>("");
-  const [messages, setMessages] = useState<Message[]>([...initializeMessages({ developer, themeContents })]);
+  const [messages, setMessages] = useState<Message[]>([...initializeMessages(loadSelection())]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleGenerate = async () => {

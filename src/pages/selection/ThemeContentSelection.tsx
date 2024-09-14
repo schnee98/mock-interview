@@ -1,6 +1,7 @@
 import { FC, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import { SELECT_ALL, THEME_CONTENTS } from "shared/constants";
+import { loadFromStorage } from "shared/helper/sessionStorage";
 import useSelectionStore from "shared/store/useSelectionStore";
 import { FadeContent } from "shared/ui/animations";
 import { ScrollArea, SelectBox, SelectContainer } from "widgets/selection/selection";
@@ -10,7 +11,10 @@ import { HeaderText } from "widgets/text/headers";
 const ThemeContentSelection: FC = () => {
   const { theme, setThemeContents } = useSelectionStore();
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [selectedBox, setSelectedBox] = useState<string[]>([]);
+  const [selectedBox, setSelectedBox] = useState<string[]>(() => {
+    const storedValue = loadFromStorage("themeContents");
+    return Array.isArray(storedValue) ? storedValue : [];
+  });
   const themeContents = useMemo(() => theme.flatMap((name) => THEME_CONTENTS[name]).filter((name) => name), [theme]);
   const navigate = useNavigate();
 
@@ -19,7 +23,10 @@ const ThemeContentSelection: FC = () => {
 
     setThemeContents(selectedBox.filter((name) => name !== SELECT_ALL));
     setIsFadingOut(true);
-    setTimeout(() => navigate("/question"), 1500);
+    setTimeout(() => {
+      sessionStorage.setItem('themeContents', JSON.stringify(selectedBox));
+      navigate("/question");
+    }, 1500);
   };
 
   const handleSelectBoxClick = (label: string) => {

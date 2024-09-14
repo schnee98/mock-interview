@@ -100,7 +100,11 @@ export const fadeOutAnimation = keyframes`
   }
 `;
 
-export const FadeContent = styled.div<{ order: number; $isFadingOut: boolean; $delay?: number }>`
+export const FadeContent = styled.div<{
+  order: number;
+  $isFadingOut: boolean;
+  $delay?: number;
+}>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
